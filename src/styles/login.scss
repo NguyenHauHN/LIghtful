@@ -1,9 +1,74 @@
-.a{
-  .b{
-    font-size: 18px;
-    color: red;
+.bg-login {
+  background-image: url('../images/bg-login-1.svg'), url("../images/bg-login-2.svg"), url("../images/bg-login-3.svg"), linear-gradient(33deg, #7941ff 17%, #a984ff 83%);
+  background-repeat: no-repeat;
+  background-position: right top, left bottom, left top, center center;
+  background-size: cover, auto, auto, auto;
+  min-height: 100vh;
+  width: 100%;
+  font-family: EuclidFlexRegular;
+
+  .content-login {
+    position: relative;
   }
-  .c{
-    color: green;
+
+  .form-login {
+    max-width: 452px;
+    width: 100%;
+
+  }
+
+  .form-footer {
+    .forget-password {
+      font-size: 0.85rem;
+
+    }
+  }
+
+  .form-body {
+    input {
+      background-color: #fff;
+      width: 100%;
+      padding: 12px;
+      outline: none;
+      border: none;
+      color: red;
+      &:focus {
+        outline: none;
+        box-shadow: none;
+      }
+      &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        color: #d7d7e2;
+      }
+      &::-moz-placeholder { /* Firefox 19+ */
+        color: #d7d7e2;
+      }
+      &:-ms-input-placeholder { /* IE 10+ */
+        color: #d7d7e2;
+      }
+      &:-moz-placeholder { /* Firefox 18- */
+        color: #d7d7e2;
+      }
+    }
+  }
+
+  .btn-login {
+    background-image: linear-gradient(-122deg, #78d8e5, #47cadb);
+    padding: 18px;
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  .btn-sign-up {
+    background-image: linear-gradient(-122deg, #78d8e5, #47cadb);
+    border-radius: 8px;
+    padding: 10px 40px;
+  }
+
+  .sign-up {
+    position: absolute;
+    right: 20px;
+    top: 50px;
   }
 }
+
+
