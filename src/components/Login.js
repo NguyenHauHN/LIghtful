@@ -4,7 +4,6 @@ import '../styles/login.scss';
 import images from '../configs/images';
 
 
-
 class Input extends Component{
     render(){
         const {type} = this.props;
@@ -12,17 +11,6 @@ class Input extends Component{
         const {classes} = this.props;
         return(
             <input type={type} className={classes} placeholder={placeholder} required/>
-        );
-    }
-}
-
-
-class ButtonLogin extends Component{
-    render(){
-        const {type} = this.props;
-        const {text} = this.props;
-        return(
-          <button type={type} className={"btn btn-login color-white mt-4"}>{text}</button>
         );
     }
 }
@@ -39,11 +27,16 @@ class SignUp extends Component{
 }
 
 class FormLogin extends Component {
+
+    handleLogin = () => {
+        this.props.onClickButton();
+    };
+
     render() {
         return (
             <div className="form-login d-flex flex-column mx-auto pt-5">
                 <div className="form-header color-white">
-                    <img src={images.logo_white}/>
+                    <img src={images.logo_white} alt="Logo white"/>
                     <h2 className="mt-4">
                         Login To <b>Your Account</b>
                     </h2>
@@ -51,7 +44,7 @@ class FormLogin extends Component {
                 <form className="form-body">
                     <Input type={"email"} placeholder={"Email"} classes={"form-control input-email mt-4"}/>
                     <Input type={"password"} placeholder={"Password"} classes={"form-control input-password mt-2"}/>
-                    <ButtonLogin text={"Login Now"} type={"submit"}/>
+                    <button type="submit" onClick={this.handleLogin} className="btn btn-login color-white mt-4">Login Now</button>
                 </form>
                 <div className="form-footer mt-2">
                     <a className="forget-password color-white mt-5">Don't remember your password?</a>
@@ -62,12 +55,17 @@ class FormLogin extends Component {
 }
 
 export default class Login extends Component {
+
+    onSubmitLogin = () => {
+        this.props.history.push("/posts");
+    };
+
     render() {
         return (
             <div className="bg-login">
                 <div className="content-login container pt-5">
                     <SignUp/>
-                    <FormLogin/>
+                    <FormLogin onClickButton={this.onSubmitLogin}/>
                 </div>
             </div>
         )

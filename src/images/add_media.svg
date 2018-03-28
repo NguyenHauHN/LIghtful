@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="21px" viewBox="0 0 24 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>Image</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="15" height="15" rx="2.52"></rect>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="15" height="15" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="New" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Compose-2" transform="translate(-650.000000, -479.000000)">
+            <g id="Add" transform="translate(650.000000, 479.000000)">
+                <g id="Image" transform="translate(0.000000, -0.000000)">
+                    <use id="outline-image@2x" stroke="#CFDBE8" mask="url(#mask-2)" stroke-width="2.52" fill="#FFFFFF" stroke-linejoin="round" stroke-dasharray="3.779999899864197" transform="translate(7.500000, 7.500000) scale(-1, -1) translate(-7.500000, -7.500000) " xlink:href="#path-1"></use>
+                    <path d="M18.4445214,2 C21.202301,2 23.4462826,4.24376881 23.4462826,7.00176124 L23.4462826,15.4443085 C23.4462826,18.2025138 21.202301,20.4460698 18.4445214,20.4460698 L10.0017612,20.4460698 C7.24376881,20.4460698 5,18.2025138 5,15.4443085 L5,7.00176124 C5,4.24376881 7.24376881,2 10.0017612,2 L18.4445214,2 Z" id="Combined-Shape" stroke="#CFDBE8" fill="#CFDBE8" fill-rule="nonzero"></path>
+                    <path d="M22.3820781,8.92350176 L21.5649819,8.10661837 C20.2091853,6.75082182 18.0111773,6.75082182 16.6555936,8.10661837 L12.7603922,12.0013941 L11.9162652,11.157267 C10.5604686,9.80147049 8.3624606,9.80147049 7.00687688,11.157267 L6.06420452,12.0999394 L6.06420452,7.00176124 C6.06420452,4.83078402 7.83057118,3.06420452 10.0017612,3.06420452 L18.4445214,3.06420452 C20.6154986,3.06420452 22.3820781,4.83078402 22.3820781,7.00176124 L22.3820781,8.92350176 Z" id="Shape" fill="#FFFFFF"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

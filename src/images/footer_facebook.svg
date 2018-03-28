@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="38px" height="39px" viewBox="0 0 38 39" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.1 (44463) - http://www.bohemiancoding.com/sketch -->
+    <title>fb</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#8F64FF" offset="0%"></stop>
+            <stop stop-color="#AD8DFF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="F" transform="translate(-858.000000, -5196.000000)" fill-rule="nonzero">
+            <g id="Footer" transform="translate(0.000000, 4926.000000)">
+                <g id="Sections-/-Footer" transform="translate(124.000000, 58.571429)">
+                    <g id="Social" transform="translate(677.828571, 211.942857)">
+                        <g id="fb" transform="translate(56.584049, 0.000000)">
+                            <g id="Page-1">
+                                <g id="Compose-|-0-Copy-4">
+                                    <g id="Boxes">
+                                        <g id="Social">
+                                            <g id="Box-2">
+                                                <g id="Group">
+                                                    <g id="Fb">
+                                                        <g id="Group-5">
+                                                            <path d="M0,18.7547456 C0,8.39678509 8.39121601,0 18.7423067,0 C29.0933973,0 37.4846133,8.39678509 37.4846133,18.7547456 C37.4846133,29.112706 29.0933973,37.5094911 18.7423067,37.5094911 C8.39121601,37.5094911 0,29.112706 0,18.7547456 Z" id="back" fill="url(#linearGradient-1)"></path>
+                                                            <path d="M19.4528878,27.6945222 L19.4528878,18.4872981 L21.9170864,18.4872981 L22.2436459,15.3144377 L19.4528878,15.3144377 L19.4570745,13.7263905 C19.4570745,12.8988597 19.5333066,12.4554497 20.6856849,12.4554497 L22.2262015,12.4554497 L22.2262015,9.28222997 L19.761654,9.28222997 C16.8013362,9.28222997 15.759381,10.8214086 15.759381,13.4098231 L15.759381,15.314797 L13.9141104,15.314797 L13.9141104,18.4876575 L15.759381,18.4876575 L15.759381,27.6945222 L19.4528878,27.6945222 Z" id="Shape" fill="#FFFFFF"></path>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

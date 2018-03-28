@@ -1,0 +1,27 @@
+.page-footer {
+  margin-left: 60px;
+  background-image: url("../images/footer_background.svg");
+  background-color: #eff2ff;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  color: #8f64fe;
+
+  a{
+    font-size: 0.9rem;
+    color: #8f64fe;
+  }
+
+  .content-right-title {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+  }
+
+  .col-footer{
+    min-width: 200px;
+  }
+
+  .icon-social{
+
+  }
+}

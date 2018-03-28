@@ -1,0 +1,35 @@
+.post-card{
+  background-color: #fff;
+  box-shadow: 0 4px 20px 0 #eceffc;
+  border-radius: 16px;
+  color: #7c92a7;
+  min-height: 370px;
+  border: none;
+
+  .card-icon{
+    img{
+      width: 30px;
+      height: 30px;
+      border: 2px solid #dce4f1;
+    }
+  }
+
+  .post-card-title{
+    color: #43586d;
+  }
+
+  .post-card-body{
+    h4{
+      color: #42576e;
+    }
+  }
+
+  .post-card-footer{
+    .post-date{
+      color: #43586d;
+    }
+    p:nth-child(2){
+      font-size: 0.8rem;
+    }
+  }
+}

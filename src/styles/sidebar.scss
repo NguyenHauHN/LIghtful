@@ -1,0 +1,33 @@
+.sidebar{
+  min-width: 60px;
+  height: 100%;
+  background-color: #fff;
+  padding-top: 90px;
+  border-right: 2px solid #eff2fb;
+  box-shadow: -5px 0 20px 0 #e2e2e2;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+
+  .sidebar-item{
+    width: 43px;
+    height: 43px;
+    text-align: center;
+    line-height: 43px;
+    cursor: pointer;
+    img{
+      opacity: 0.5;
+    }
+  }
+
+  .selected{
+    border-left: 4px solid #7c92a7;
+    img{
+      opacity: 1;
+    }
+  }
+
+  a.selected{
+    display: block;
+  }
+}

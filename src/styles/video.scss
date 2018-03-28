@@ -1,0 +1,40 @@
+.video {
+  border-radius: 5px;
+  position: relative;
+
+  &:hover{
+    .video-img{
+      transform: scale(1.05);
+      filter: grayscale(100%);
+    }
+  }
+
+  .video-img {
+    background-image: url("../images/video_1.jpg");
+    background-size: cover;
+    background-position: 50%;
+    padding-bottom: 65%;
+    border-radius: 5px;
+    transition: transform .2s ease-in-out,filter .2s ease-in-out,-webkit-transform .2s ease-in-out,-webkit-filter .2s ease-in-out;
+
+    &:hover {
+      .overlay-video {
+        opacity: 1;
+      }
+    }
+  }
+
+  .overlay-video {
+    background-image: url("../images/play-button.svg");
+    background-position: 50%;
+    background-size: 10%;
+    background-repeat: no-repeat;
+    background-color: rgba(67, 88, 109, .5);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    opacity: 0;
+    width: 100%;
+    transition: opacity .2s ease-in-out;
+  }
+}

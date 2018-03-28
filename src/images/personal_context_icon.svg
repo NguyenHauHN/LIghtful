@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Context-Sw" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="5" transform="translate(-1282.000000, -35.000000)">
+            <g id="Header">
+                <g id="Icons-" transform="translate(1265.000000, 22.000000)">
+                    <g id="Account">
+                        <g id="Group-2" transform="translate(19.000000, 15.000000)">
+                            <circle id="Oval" stroke="#FFFFFF" stroke-width="3" fill="#7C92A7" cx="9" cy="9" r="9"></circle>
+                            <path d="M7.0573913,5.98359998 C7.0573913,4.88159999 7.95368463,4 9.04099129,4 C10.1282979,4 11.0245913,4.88159999 11.0245913,5.98359998 C11.0245913,7.07090664 10.1429913,7.96719996 9.04099129,7.96719996 C7.95368463,7.95250663 7.0573913,7.07090664 7.0573913,5.98359998 Z M9.04,8.7576 C7.3657971,8.7576 6,11.0072 6,11.9344 C6,12.8616 7.3657971,13.12 9.04,13.12 C10.7142029,13.12 12.08,12.8616 12.08,11.9344 C12.08,11.0072 10.7142029,8.7576 9.04,8.7576 Z" id="Shape" fill="#FFFFFF" fill-rule="nonzero"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

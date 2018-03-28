@@ -1,3 +1,5 @@
+@import "page";
+
 .color-white{
   color: #fff !important;
 }
@@ -6,3 +8,36 @@
   font-family: EuclidFlexRegular;
   src: url("../fonts/EuclidFlex-Regular.otf");
 }
+
+p, li span{
+  font-size: 0.9rem;
+}
+
+.img-rounded{
+  border-radius: 50%;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 600;
+  color: #43586d;
+}
+
+h2{
+  font-size: 1.35rem;
+}
+
+h4{
+  font-size: 1rem;
+}
+
+body{
+  font-family: 'Open Sans', sans-serif;
+
+}
+
+hr{
+  border: 1px solid;
+  opacity: .5;
+  border-color: #e3e4e9;
+}
+

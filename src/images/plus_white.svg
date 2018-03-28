@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="13px" height="13px" viewBox="0 0 13 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>Follow</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Listen-|-1" transform="translate(-308.000000, -771.000000)" fill-rule="nonzero" fill="#FFFFFF">
+            <g id="Hover" transform="translate(91.000000, 761.000000)">
+                <g id="Icons" transform="translate(19.000000, 7.000000)">
+                    <g id="Follow" transform="translate(198.000000, 3.000000)">
+                        <path d="M5.82758633,0.672413561 L5.82758633,5.8275842 L0.672413782,5.8275842 C0.301062064,5.8275842 0,6.12862823 0,6.50000224 C0,6.87135384 0.301062064,7.1724158 0.672413782,7.1724158 L5.82758633,7.1724158 L5.82758633,12.3275864 C5.82758633,12.6989604 6.12864839,13 6.50000011,13 C6.87137424,13 7.17241389,12.6989604 7.17241389,12.3275864 L7.17241389,7.1724158 L12.3275862,7.1724158 C12.6989606,7.1724158 13,6.87135384 13,6.50000224 C13,6.12862823 12.6989606,5.8275842 12.3275862,5.8275842 L7.17241389,5.8275842 L7.17241389,0.672413561 C7.17241389,0.301061965 6.87137424,2.54815238e-14 6.50000011,2.54815238e-14 C6.12864839,0 5.82758633,0.301061965 5.82758633,0.672413561 Z" id="Shape"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
