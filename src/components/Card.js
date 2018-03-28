@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import images from '../configs/images';
 import '../styles/card.scss';
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import PostDetail from "./PostDetail";
 
 export default class Card extends Component {
     render() {
@@ -16,7 +18,7 @@ export default class Card extends Component {
                 </div>
                 <div className="post-card-body p-3">
                     <h4>
-                        <a>How And Why To Create Personas For Your Charity</a>
+                        <Link to="/posts/1">How And Why To Create Personas For Your Charity</Link>
                     </h4>
                     <p className="my-3">Do you know how some adverts totally resonate with you and some don’t? The reason why the ones
                         that resonate are so effective is because they have been specifically targeted...</p>
@@ -25,6 +27,7 @@ export default class Card extends Component {
                     <p className="post-date mb-0">22nd Mar 2018</p>
                     <p className="post-author mb-0">Kirsty Marrins</p>
                 </div>
+
             </div>
         )
     }

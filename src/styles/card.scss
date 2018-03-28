@@ -1,4 +1,4 @@
-.post-card{
+.post-card {
   background-color: #fff;
   box-shadow: 0 4px 20px 0 #eceffc;
   border-radius: 16px;
@@ -6,29 +6,32 @@
   min-height: 370px;
   border: none;
 
-  .card-icon{
-    img{
+  .card-icon {
+    img {
       width: 30px;
       height: 30px;
       border: 2px solid #dce4f1;
     }
   }
 
-  .post-card-title{
+  .post-card-title {
     color: #43586d;
   }
 
-  .post-card-body{
-    h4{
+  .post-card-body {
+    h4, a {
       color: #42576e;
+    }
+    a {
+      text-decoration: none;
     }
   }
 
-  .post-card-footer{
-    .post-date{
+  .post-card-footer {
+    .post-date {
       color: #43586d;
     }
-    p:nth-child(2){
+    p:nth-child(2) {
       font-size: 0.8rem;
     }
   }

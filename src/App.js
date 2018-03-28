@@ -1,16 +1,20 @@
 import React, {Component} from 'react';
-import {BrowserRouter as Router, Switch} from 'react-router-dom';
+import {BrowserRouter as Router, Switch, BrowserRouter, Route} from 'react-router-dom';
+import {Login, Posts, Compose, Videos, PostDetail} from './components/';
 import {routes, RouteConfig} from "./configs/route";
 
 class App extends Component {
     render() {
-        const {main} = routes;
         return (
-            <Router>
+            <BrowserRouter>
                 <Switch>
-                    {main.map((route, i) => <RouteConfig key={i} {...route} />)}
+                    <Route exact path="/login" component={Login} />
+                    <Route exact path="/posts" component={Posts} />
+                    <Route exact path="/compose" component={Compose} />
+                    <Route exact path="/videos" component={Videos} />
+                    <Route exact path="/posts/:pid" component={PostDetail} />
                 </Switch>
-            </Router>
+            </BrowserRouter>
         );
     }
 }

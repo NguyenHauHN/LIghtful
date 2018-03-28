@@ -6,7 +6,7 @@ import Video from './Video';
 import '../styles/main.scss';
 
 
-export default class Homepage extends Component {
+export default class Videos extends Component {
     render() {
         return (
             <div className="homepage">
