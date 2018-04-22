@@ -5,6 +5,15 @@ import 'bootstrap/dist/js/bootstrap';
 import 'jquery/dist/jquery.slim';
 
 export default class Header extends Component {
+    constructor(props) {
+        super(props)
+    }
+
+    signout = () => {
+        localStorage.clear()
+        document.location.href = '/login'
+    }
+
     render() {
         return (
             <div className="header-main">
@@ -28,7 +37,7 @@ export default class Header extends Component {
                                 <li className="py-2">
                                     <span>Add organisation</span>
                                 </li>
-                                <li className="py-2">
+                                <li className="py-2" style={{cursor: 'pointer'}} onClick={this.signout}>
 
                                     <img src={images.sign_out_icon} className="mr-2" alt="Sign Out Icon"/>
                                     <span>Signout</span>

@@ -2,13 +2,55 @@ import React, {Component} from 'react';
 import Header from "./Header";
 import Sidebar from './Sidebar';
 import Footer from './Footer';
-import PostDetail from './PostDetail';
 import '../styles/main.scss';
 import Card from './Card';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 
 export default class Posts extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            listPost: []
+        }
+        this.remove = this.remove.bind(this)
+    }
+
+    componentDidMount() {
+        fetch("http://127.0.0.1:8000/posts/")
+            .then((response) => {
+                return response.json()
+            })
+            .then((responseJson) => {
+                this.setState({
+                    listPost: responseJson
+                });
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    }
+
+    remove = (event, id) => {
+        if (id) {
+            fetch("http://127.0.0.1:8000/posts/" + id + "/", {
+                method: 'DELETE'
+            })
+                .then((response) => {
+                    return response
+                })
+                .then((responseJson) => {
+                    this.setState((prevState, props) => {
+                        return {
+                            listPost: prevState.listPost.filter((item, index) => item.id !== id)
+                        }
+                    })
+                })
+        }
+
+    }
+
     render() {
+        const {listPost} = this.state
         return (
             <div>
                 <div className="homepage">
@@ -19,18 +61,15 @@ export default class Posts extends Component {
                             <div className="page-content px-4 py-4">
                                 <h2 className="mb-4">List Post</h2>
                                 <div className="row mx-0">
-                                    <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12 post-item pl-0">
-                                        <Card/>
-                                    </div>
-                                    <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12 post-item pl-0">
-                                        <Card/>
-                                    </div>
-                                    <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12 post-item pl-0">
-                                        <Card/>
-                                    </div>
-                                    <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12 post-item pl-0">
-                                        <Card/>
-                                    </div>
+                                    {listPost.map((item, index) => {
+                                        return (
+                                            <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12 post-item pl-0"
+                                                 key={index}>
+                                                <Card data={item} callback={(e) => this.remove(e, item.id)}/>
+                                            </div>
+                                        )
+
+                                    })}
                                 </div>
                             </div>
                         </div>

@@ -4,6 +4,7 @@ import images from "../configs/images";
 import {NavLink} from 'react-router-dom';
 
 export default class Sidebar extends Component {
+
     render() {
         return (
             <div className="sidebar">

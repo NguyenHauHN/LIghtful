@@ -15,6 +15,7 @@ const images = {
     add_media: require('../images/add_media.svg'),
     multimedia_icon: require('../images/multimedia_purple.svg'),
     play_button: require('../images/play-button.svg'),
+    close: require('../images/close.svg')
 }
 
 export default images;

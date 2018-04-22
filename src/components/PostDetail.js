@@ -4,24 +4,85 @@ import Header from "./Header";
 import Sidebar from './Sidebar';
 import Footer from './Footer';
 
-export default class PostDetail extends Component{
-    render(){
-        return(
+export default class PostDetail extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            infoPost: {}
+        }
+    }
+
+    getInfoPost = () => {
+        let idPost = this.props.match.params.pid
+        fetch("http://127.0.0.1:8000/posts/" + idPost + "/")
+            .then((response) => response.json())
+            .then((responseJson) => {
+                this.setState({
+                    infoPost: responseJson
+                })
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+
+    }
+
+    save = () => {
+        let idPost = this.props.match.params.pid
+        fetch("http://127.0.0.1:8000/posts/" + idPost + "/", {
+            method: 'PUT',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(this.state.infoPost)
+        })
+            .then((response) => response.json())
+            .then((responseJson) => {
+                this.setState({
+                    infoPost: responseJson
+                })
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    }
+
+    componentWillMount() {
+        this.getInfoPost()
+    }
+
+    handleChange = (e) => {
+        let info = this.state.infoPost;
+        info.content = e.target.value;
+        this.setState({
+            infoPost: info
+        })
+    }
+
+    render() {
+        let {infoPost} = this.state
+        return (
             <div className="homepage">
                 <Header/>
                 <div className="page-wrapper">
                     <Sidebar/>
                     <div className="page-content-wrapper">
                         <div className="page-content px-4 py-4">
-                            <h2 className="mb-4">Post: <span className="name-post">How And Why To Create Personas For Your Charity</span></h2>
+                            <h2 className="mb-4">Post:&nbsp;
+                                <span className="name-post">
+                                    {infoPost.title}
+                                </span>
+                            </h2>
                             <div className="row">
                                 <div className="col-lg-5 col-md-12">
                                     <p>Video is here</p>
                                 </div>
                                 <div className="col-lg-7 col-md-12">
-                                    <div className="form-new-post">
+                                    <div className="form-new-post content-post">
                                         <div className="content-new-post-wrapper p-3">
-                                            <textarea placeholder="Type your message in here."></textarea>
+                                            <textarea placeholder="Type your message in here."
+                                                      onChange={this.handleChange} value={infoPost.content}></textarea>
                                         </div>
                                         <hr className="my-0"/>
 
@@ -35,7 +96,7 @@ export default class PostDetail extends Component{
 
                                             </div>
                                             <div className="submissions">
-                                                <button type="button" className="btn">Post Now</button>
+                                                <button type="button" className="btn" onClick={this.save}>Save</button>
                                             </div>
                                         </div>
                                     </div>
