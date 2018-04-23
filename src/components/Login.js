@@ -3,6 +3,7 @@ import '../styles/main.scss';
 import '../styles/login.scss';
 import images from '../configs/images';
 import Link from "react-router-dom/es/Link";
+import {SERVICE} from "../configs/config";
 
 
 export class Input extends Component {
@@ -44,7 +45,7 @@ export class FormLogin extends Component {
 
     handleLogin = (e) => {
         e.preventDefault()
-        fetch("http://127.0.0.1:8000/login/", {
+        fetch(SERVICE.lightful_service + "/login/", {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',

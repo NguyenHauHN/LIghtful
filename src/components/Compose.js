@@ -4,6 +4,7 @@ import Sidebar from './Sidebar';
 import Footer from './Footer';
 import '../styles/main.scss';
 import images from '../configs/images';
+import {SERVICE} from "../configs/config";
 
 export default class Homepage extends Component {
     constructor(props) {
@@ -27,7 +28,7 @@ export default class Homepage extends Component {
     save = () => {
         let {newPost} = this.state
         newPost["user_id"] = localStorage.getItem("id")
-        fetch("http://127.0.0.1:8000/posts/", {
+        fetch(SERVICE.lightful_service + "/posts/", {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
@@ -96,7 +97,8 @@ export default class Homepage extends Component {
 
                                             </div>
                                             <div className="submissions">
-                                                <button type="button" className="btn" onClick={this.save}>Post Now</button>
+                                                <button type="button" className="btn" onClick={this.save}>Post Now
+                                                </button>
                                             </div>
                                         </div>
                                     </div>

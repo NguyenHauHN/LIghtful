@@ -3,6 +3,7 @@ import images from '../configs/images';
 import '../styles/card.scss';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import moment from "moment";
+import {SERVICE} from "../configs/config";
 
 export default class Card extends Component {
     constructor(props) {
@@ -30,7 +31,7 @@ export default class Card extends Component {
     }
 
     getUserInfo(){
-        fetch("http://127.0.0.1:8000/users/" + this.props.data.user_id + "/")
+        fetch(SERVICE.lightful_service + "/users/" + this.props.data.user_id + "/")
             .then((response) => {
                 return response.json()
             })

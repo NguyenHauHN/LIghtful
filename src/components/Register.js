@@ -3,7 +3,8 @@ import '../styles/main.scss';
 import '../styles/login.scss';
 import images from '../configs/images';
 import {FormLogin, SignUp} from "./Login";
-import {browserHistory,withRouter} from "react-router-dom"
+import {browserHistory, withRouter} from "react-router-dom"
+import {SERVICE} from "../configs/config";
 
 export class FormRegister extends Component {
     constructor(props) {
@@ -11,18 +12,18 @@ export class FormRegister extends Component {
         this.state = {
             username: '',
             password: '',
-            email:'',
+            email: '',
             rePassword: ''
         }
     }
 
     handleRegister = (e) => {
         e.preventDefault()
-        if(this.state.password !== this.state.rePassword){
+        if (this.state.password !== this.state.rePassword) {
             alert("Password incorrect!")
             return
         }
-        fetch("http://127.0.0.1:8000/users/", {
+        fetch(SERVICE.lightful_service + "/users/", {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -40,15 +41,15 @@ export class FormRegister extends Component {
                 return Promise.all([statusCode, data]);
             })
             .then((responseJson) => {
-                if(responseJson[0] !== 200 && responseJson[0] !== 201){
-                    if(responseJson[1].hasOwnProperty("username")){
+                if (responseJson[0] !== 200 && responseJson[0] !== 201) {
+                    if (responseJson[1].hasOwnProperty("username")) {
                         alert("Username existed!")
                     }
-                    else if(responseJson[1].hasOwnProperty("email")){
+                    else if (responseJson[1].hasOwnProperty("email")) {
                         alert("Username existed!")
                     }
                 }
-                else{
+                else {
                     alert("Register account successfully!")
                     this.props.success()
                 }
@@ -78,7 +79,7 @@ export class FormRegister extends Component {
                         Login To <b>Your Account</b>
                     </h2>
                 </div>
-                <form className="form-body"onSubmit={this.handleRegister}>
+                <form className="form-body" onSubmit={this.handleRegister}>
                     <input type={"text"} value={username} onChange={this.handleChange}
                            className="form-control input-email mt-4" placeholder={"Username"} name="username" required/>
                     <input type={"email"} value={email} onChange={this.handleChange}
@@ -86,7 +87,8 @@ export class FormRegister extends Component {
                     <input type={"password"} value={password} onChange={this.handleChange}
                            className="form-control input-email mt-2" placeholder={"Password"} name="password" required/>
                     <input type={"password"} value={rePassword} onChange={this.handleChange}
-                           className="form-control input-email mt-2" placeholder={"Retype password"} name="rePassword" required/>
+                           className="form-control input-email mt-2" placeholder={"Retype password"} name="rePassword"
+                           required/>
                     <button type="submit" className="btn btn-login color-white mt-4">Register
                     </button>
                 </form>
@@ -99,13 +101,14 @@ export class FormRegister extends Component {
 }
 
 export default class Register extends Component {
-    constructor(props){
+    constructor(props) {
         super(props)
     }
 
     redirectToHome = () => {
         this.props.history.push("/login");
     }
+
     render() {
         return (
             <div className="bg-login">

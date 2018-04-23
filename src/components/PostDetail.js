@@ -3,6 +3,7 @@ import images from "../configs/images";
 import Header from "./Header";
 import Sidebar from './Sidebar';
 import Footer from './Footer';
+import {SERVICE} from "../configs/config";
 
 export default class PostDetail extends Component {
     constructor(props) {
@@ -14,7 +15,7 @@ export default class PostDetail extends Component {
 
     getInfoPost = () => {
         let idPost = this.props.match.params.pid
-        fetch("http://127.0.0.1:8000/posts/" + idPost + "/")
+        fetch(SERVICE.lightful_service + "/posts/" + idPost + "/")
             .then((response) => response.json())
             .then((responseJson) => {
                 this.setState({
@@ -29,7 +30,8 @@ export default class PostDetail extends Component {
 
     save = () => {
         let idPost = this.props.match.params.pid
-        fetch("http://127.0.0.1:8000/posts/" + idPost + "/", {
+        const user_id = JSON.parse(localStorage.getItem("id"))
+        fetch(SERVICE.lightful_service + "/posts/" + idPost + "/?user_id=" + user_id, {
             method: 'PUT',
             headers: {
                 Accept: 'application/json',
