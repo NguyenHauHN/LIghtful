@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Switch, BrowserRouter, Route} from 'react-router-dom';
-import {Login, Posts, Compose, Videos, PostDetail} from './components/';
+import {Login, Posts, Compose, Videos, PostDetail, Register} from './components/';
 class App extends Component {
     render() {
         return (
@@ -8,6 +8,7 @@ class App extends Component {
                 <Switch>
                     <Route exact path="/" component={Posts} />
                     <Route exact path="/login" component={Login} />
+                    <Route exact path="/register" component={Register} />
                     <Route exact path="/posts" component={Posts} />
                     <Route exact path="/compose" component={Compose} />
                     <Route exact path="/videos" component={Videos} />

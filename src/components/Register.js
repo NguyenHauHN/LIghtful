@@ -2,49 +2,27 @@ import React, {Component} from 'react';
 import '../styles/main.scss';
 import '../styles/login.scss';
 import images from '../configs/images';
-import Link from "react-router-dom/es/Link";
+import {FormLogin, SignUp} from "./Login";
+import {browserHistory,withRouter} from "react-router-dom"
 
-
-export class Input extends Component {
-    render() {
-        const {type} = this.props;
-        const {placeholder} = this.props;
-        const {classes} = this.props;
-        return (
-            <input type={type} className={classes} placeholder={placeholder} required/>
-        );
-    }
-}
-
-export class SignUp extends Component {
-    constructor(props){
-        super(props)
-    }
-    render() {
-        const {linkTo} = this.props
-        const {text} = this.props
-        const {title} = this.props
-        return (
-            <div className="sign-up d-flex align-items-center">
-                <p className="color-white mb-0 mr-3">{title}</p>
-                <Link to={linkTo} className="btn btn-sign-up color-white">{text}</Link>
-            </div>
-        );
-    }
-}
-
-export class FormLogin extends Component {
+export class FormRegister extends Component {
     constructor(props) {
         super(props)
         this.state = {
             username: '',
-            password: ''
+            password: '',
+            email:'',
+            rePassword: ''
         }
     }
 
-    handleLogin = (e) => {
+    handleRegister = (e) => {
         e.preventDefault()
-        fetch("http://127.0.0.1:8000/login/", {
+        if(this.state.password !== this.state.rePassword){
+            alert("Password incorrect!")
+            return
+        }
+        fetch("http://127.0.0.1:8000/users/", {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -52,21 +30,31 @@ export class FormLogin extends Component {
             },
             body: JSON.stringify({
                 "username": this.state.username,
-                "password": this.state.password
+                "password": this.state.password,
+                "email": this.state.email
             })
         })
             .then((response) => {
-                return response.json()
+                const statusCode = response.status;
+                const data = response.json();
+                return Promise.all([statusCode, data]);
             })
             .then((responseJson) => {
-                localStorage.setItem("token", responseJson.token)
-                localStorage.setItem("id", responseJson.id)
-                localStorage.setItem("username", responseJson.username)
-                this.props.success()
-
+                if(responseJson[0] !== 200 && responseJson[0] !== 201){
+                    if(responseJson[1].hasOwnProperty("username")){
+                        alert("Username existed!")
+                    }
+                    else if(responseJson[1].hasOwnProperty("email")){
+                        alert("Username existed!")
+                    }
+                }
+                else{
+                    alert("Register account successfully!")
+                    this.props.success()
+                }
             })
             .catch((err) => {
-                console.log('error login', err)
+                console.log('error register', err)
             })
     };
 
@@ -80,6 +68,8 @@ export class FormLogin extends Component {
     render() {
         const {username} = this.state
         const {password} = this.state
+        const {rePassword} = this.state
+        const {email} = this.state
         return (
             <div className="form-login d-flex flex-column mx-auto pt-5">
                 <div className="form-header color-white">
@@ -88,13 +78,16 @@ export class FormLogin extends Component {
                         Login To <b>Your Account</b>
                     </h2>
                 </div>
-                <form className="form-body">
+                <form className="form-body"onSubmit={this.handleRegister}>
                     <input type={"text"} value={username} onChange={this.handleChange}
                            className="form-control input-email mt-4" placeholder={"Username"} name="username" required/>
+                    <input type={"email"} value={email} onChange={this.handleChange}
+                           className="form-control input-email mt-2" placeholder={"Email"} name="email" required/>
                     <input type={"password"} value={password} onChange={this.handleChange}
                            className="form-control input-email mt-2" placeholder={"Password"} name="password" required/>
-                    <button type="submit" onClick={this.handleLogin} className="btn btn-login color-white mt-4">Login
-                        Now
+                    <input type={"password"} value={rePassword} onChange={this.handleChange}
+                           className="form-control input-email mt-2" placeholder={"Retype password"} name="rePassword" required/>
+                    <button type="submit" className="btn btn-login color-white mt-4">Register
                     </button>
                 </form>
                 <div className="form-footer mt-2">
@@ -105,24 +98,22 @@ export class FormLogin extends Component {
     }
 }
 
-export default class Login extends Component {
-    constructor(props) {
+export default class Register extends Component {
+    constructor(props){
         super(props)
     }
 
     redirectToHome = () => {
-        this.props.history.push("/posts");
+        this.props.history.push("/login");
     }
-
     render() {
         return (
             <div className="bg-login">
                 <div className="content-login container pt-5">
-                    <SignUp linkTo={"/register"} text={"Signup Now"}/>
-                    <FormLogin success={this.redirectToHome}/>
+                    <SignUp linkTo={"/login"} text={"Signin Now"} title={"Do have an account?"}/>
+                    <FormRegister success={this.redirectToHome}/>
                 </div>
             </div>
         )
     }
 }
-

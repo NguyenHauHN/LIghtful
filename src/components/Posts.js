@@ -4,19 +4,22 @@ import Sidebar from './Sidebar';
 import Footer from './Footer';
 import '../styles/main.scss';
 import Card from './Card';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import InfiniteScroll from 'react-infinite-scroll-component';
 
 export default class Posts extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            listPost: []
+            listPost: {
+                results: []
+            }
         }
         this.remove = this.remove.bind(this)
     }
 
     componentDidMount() {
-        fetch("http://127.0.0.1:8000/posts/")
+        const user_id = JSON.parse(localStorage.getItem("id"))
+        fetch("http://127.0.0.1:8000/posts/?user_id=" + user_id + "&page=1")
             .then((response) => {
                 return response.json()
             })
@@ -60,10 +63,14 @@ export default class Posts extends Component {
                         <div className="page-content-wrapper">
                             <div className="page-content px-4 py-4">
                                 <h2 className="mb-4">List Post</h2>
+                                {
+                                    listPost.count <= 0 && <p>You have no posts to display!</p>
+                                }
+
                                 <div className="row mx-0">
-                                    {listPost.map((item, index) => {
+                                    {listPost.results.map((item, index) => {
                                         return (
-                                            <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12 post-item pl-0"
+                                            <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12 post-item pl-0 mt-2"
                                                  key={index}>
                                                 <Card data={item} callback={(e) => this.remove(e, item.id)}/>
                                             </div>

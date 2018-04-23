@@ -15,6 +15,7 @@ export default class Header extends Component {
     }
 
     render() {
+        const username = localStorage.getItem("username")
         return (
             <div className="header-main">
                 <div className="header-wrapper d-flex flex-row align-items-center justify-content-between px-4">
@@ -25,7 +26,7 @@ export default class Header extends Component {
                     </div>
                     <div className="info-user-wrapper d-flex flex-row align-items-center">
                         <p className="username mb-0 mr-3">
-                            You are logged in as <b>hau</b>
+                            You are logged in as <b>{username}</b>
                         </p>
                         <div className="avatar">
                             <a className=" dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"

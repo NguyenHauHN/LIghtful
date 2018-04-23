@@ -8,6 +8,9 @@ export default class Card extends Component {
     constructor(props) {
         super(props)
         this.removePost = this.removePost.bind(this)
+        this.state ={
+            currentUser: ''
+        }
     }
 
     formatDate(date) {
@@ -26,8 +29,28 @@ export default class Card extends Component {
 
     }
 
+    getUserInfo(){
+        fetch("http://127.0.0.1:8000/users/" + this.props.data.user_id + "/")
+            .then((response) => {
+                return response.json()
+            })
+            .then((responseJson) => {
+                this.setState({
+                    currentUser: responseJson
+                })
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    }
+
+    componentWillMount(){
+        this.getUserInfo()
+    }
+
     render() {
         const {data} = this.props
+        const {currentUser} = this.state
         return (
             <div className="post-card">
                 <div className="post-card-header d-flex flex-row align-items-center justify-content-between p-3">
@@ -52,7 +75,7 @@ export default class Card extends Component {
                 </div>
                 <div className="post-card-footer p-3">
                     <p className="post-date mb-0">{this.formatDate(data.created_at)}</p>
-                    <p className="post-author mb-0">{data.author}</p>
+                    <p className="post-author mb-0">{currentUser.username}</p>
                 </div>
             </div>
         )

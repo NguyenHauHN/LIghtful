@@ -25,6 +25,8 @@ export default class Homepage extends Component {
     }
 
     save = () => {
+        let {newPost} = this.state
+        newPost["user_id"] = localStorage.getItem("id")
         fetch("http://127.0.0.1:8000/posts/", {
             method: 'POST',
             headers: {
@@ -36,6 +38,7 @@ export default class Homepage extends Component {
             .then((response) => response.json())
             .then((responseJson) => {
                 alert("New Post added successfully!")
+                this.props.history.push("/posts");
                 this.setState({
                     newPost: {
                         title: "",

@@ -5,6 +5,7 @@ import Posts from '../components/Posts';
 import Compose from '../components/Compose';
 import Videos from '../components/Videos';
 import PostDetail from '../components/PostDetail';
+import Register from '../components/Register';
 
 export const routes = [
     {
@@ -36,7 +37,13 @@ export const routes = [
         path: "/posts/:id",
         component: PostDetail,
         exact: true
+    },
+    {
+        path: "/register",
+        component: Register,
+        exact: true
     }
+]
 ]
 
 export const RouteConfig = route => (
